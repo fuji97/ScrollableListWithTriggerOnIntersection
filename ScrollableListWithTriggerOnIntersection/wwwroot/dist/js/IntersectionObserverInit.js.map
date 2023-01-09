@@ -1,0 +1,1 @@
+{"version":3,"file":"IntersectionObserverInit.js","sourceRoot":"","sources":["../../../Js/src/IntersectionObserverInit.ts"],"names":[],"mappings":"","sourcesContent":["export interface IntersectionObserverInit {\n    root?: Element | null;\n    rootMargin?: string;\n    threshold?: number | number[];\n}"]}

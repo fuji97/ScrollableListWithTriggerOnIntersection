@@ -1,0 +1,1 @@
+{"version":3,"file":"IntersectionObserver.js","sourceRoot":"","sources":["../../../Js/src/IntersectionObserver.ts"],"names":[],"mappings":"","sourcesContent":["export interface IntersectionObserver {\n    observe(target: Element): void;\n    disconnect(): void;\n}"]}

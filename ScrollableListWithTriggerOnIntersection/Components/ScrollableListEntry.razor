@@ -1,0 +1,31 @@
+﻿@inject JSRuntime Js;
+
+<div @ref="_divElement">
+        <!-- Div content goes here -->
+    </div>
+
+@code {
+    [Parameter]
+    public EventCallback OnIntersection { get; set; }
+    
+    [CascadingParameter]
+    public ElementReference RootListElement { get; set; }
+
+    private ElementReference _divElement;
+
+    [JSInvokable]
+    public async Task OnIntersectionHandler(bool isIntersecting)
+    {
+    // Invoke the OnIntersection EventCallback and pass the isIntersecting argument
+        await OnIntersection.InvokeAsync(isIntersecting);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+    // Initialize the IntersectionObserver when the component is rendered for the first time
+            await Js.InvokeVoidAsync("initializeIntersectionObserver", _divElement, DotNetObjectReference.Create(this));
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "ES6",
+    "sourceMap": true,
+    "inlineSources": true,
+    "outDir": "../wwwroot/dist/js/",
+    "moduleResolution": "Node"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
